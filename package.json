@@ -1,0 +1,80 @@
+{
+  "name": "taro-ui-ljlx",
+  "version": "3.1.0",
+  "description": "UI KIT for Taro",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "sideEffects": [
+    "*.scss",
+    "*.css"
+  ],
+  "types": "./types/index.d.ts",
+  "keywords": [
+    "taro",
+    "taro-ui",
+    "taro-ui-ljlx",
+    "ui"
+  ],
+  "files": [
+    "lib",
+    "dist",
+    "types"
+  ],
+  "author": "kecoyo <kecoyo@163.com>",
+  "homepage": "https://taro-ui.ljlx.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kecoyo/taro-ui-ljlx.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "tag": "next"
+  },
+  "scripts": {
+    "dev": "yarn run dev:lib",
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "dev:rollup": "rollup --config ./config/rollup.config.js --watch",
+    "build": "yarn run build:rollup && yarn run build:lib",
+    "build:lib": "tsc --project ./tsconfig.build.json",
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "lint": "eslint ./src --fix",
+    "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
+    "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
+    "clean": "rimraf .temp dist lib coverage"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "dayjs": "^1.7.7",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@tarojs/components": "3.6.6",
+    "@tarojs/react": "3.6.6",
+    "@tarojs/taro": "3.6.6",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^13.11.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "camelize": "^1.0.0",
+    "eslint": "^8.49.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^2.3.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-visualizer": "^4.0.2",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "@tarojs/components": ">=3",
+    "@tarojs/react": ">=3",
+    "@tarojs/taro": ">=3",
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0"
+  }
+}
