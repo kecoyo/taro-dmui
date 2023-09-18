@@ -2,9 +2,21 @@ import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
 import { AtButton } from 'taro-ui';
-import { ButtonProps } from '../../../types/button';
+import { AtButtonProps } from 'taro-ui/types/button';
 import { withNativeProps } from '../../common/native-props';
 import mergeProps from '../../common/with-default-props';
+
+export interface ButtonProps extends Omit<AtButtonProps, 'type' | 'size'> {
+  /**
+   * 按钮的类型
+   */
+  type?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
+  /**
+   * 按钮的大小
+   * @default 'normal'
+   */
+  size?: 'large' | 'normal' | 'small';
+}
 
 export const defaultButtonProps = {
   size: 'normal',

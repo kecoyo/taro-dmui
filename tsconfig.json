@@ -1,9 +1,23 @@
 {
-  "extends": "./config/tsconfig.build",
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
-    "baseUrl": "./",
-    "typeRoots": ["node_modules/@types", "types"]
-  }
+    "module": "es6",
+    "outDir": "./lib",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*"]
 }
