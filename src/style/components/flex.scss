@@ -1,8 +1,8 @@
-@use "sass:math";
+@use 'sass:math';
 @import '../variables/default.scss';
 @import '../mixins/index.scss';
 
-.at-row {
+.lj-row {
   @include display-flex();
 
   width: 100%;
@@ -108,7 +108,7 @@
   }
 }
 
-.at-col {
+.lj-col {
   @include flex(1);
 
   width: 100%;

@@ -1,59 +1,61 @@
 {
-  "name": "taro-ui-ljlx",
+  "name": "taro-dmui",
   "version": "3.1.0",
   "description": "UI KIT for Taro",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.js",
-  "source": "src/index.ts",
+  "keywords": [
+    "taro",
+    "taro-ui",
+    "taro-dmui",
+    "ui"
+  ],
+  "homepage": "https://taro-ui.ljlx.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kecoyo/taro-dmui.git"
+  },
+  "license": "MIT",
+  "author": "kecoyo <kecoyo@163.com>",
   "sideEffects": [
     "*.scss",
     "*.css"
   ],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.ts",
   "types": "./types/index.d.ts",
-  "keywords": [
-    "taro",
-    "taro-ui",
-    "taro-ui-ljlx",
-    "ui"
-  ],
   "files": [
     "lib",
     "dist",
     "types"
   ],
-  "author": "kecoyo <kecoyo@163.com>",
-  "homepage": "https://taro-ui.ljlx.com",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:kecoyo/taro-ui-ljlx.git"
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "tag": "next"
-  },
   "scripts": {
-    "dev": "yarn run dev:lib",
-    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
-    "dev:rollup": "rollup --config ./config/rollup.config.js --watch",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
+    "clean": "rimraf .temp dist lib coverage",
+    "dev": "yarn run dev:lib",
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "dev:rollup": "rollup --config ./config/rollup.config.js --watch",
     "lint": "eslint ./src --fix",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
-    "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
-    "clean": "rimraf .temp dist lib coverage"
+    "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
   },
+  "prettier": "@kecoyo/prettier-config",
   "dependencies": {
+    "ahooks": "^3.7.8",
     "classnames": "^2.2.6",
     "dayjs": "^1.7.7",
     "lodash": "^4.17.10",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "taro-ui": "^3.1.0"
   },
   "devDependencies": {
+    "@kecoyo/prettier-config": "^1.0.2",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@tarojs/components": "3.6.6",
+    "@tarojs/components": "3.6.8",
+    "@tarojs/plugin-platform-weapp": "^3.6.16",
     "@tarojs/react": "3.6.6",
     "@tarojs/taro": "3.6.6",
     "@types/classnames": "^2.2.9",
@@ -76,5 +78,8 @@
     "@tarojs/taro": ">=3",
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
+  },
+  "publishConfig": {
+    "tag": "next"
   }
 }

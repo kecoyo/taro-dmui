@@ -1,0 +1,18 @@
+/* 文本 */
+@mixin text($color: $color-text-base, $font-size: $font-size-base, $line-height: $line-height-base) {
+  @if ($color) {
+    color: $color;
+  } @else {
+    color: $color-text-base;
+  }
+  @if ($font-size) {
+    font-size: $font-size;
+  } @else {
+    font-size: $font-size-base;
+  }
+  @if ($line-height) {
+    line-height: $line-height;
+  } @else {
+    line-height: $line-height-base;
+  }
+}

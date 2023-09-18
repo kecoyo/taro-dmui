@@ -1,0 +1,66 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+.lj-button {
+  // type
+  &--primary {
+    color: $color-white;
+    background: $color-primary;
+    @include border-thin($color: $color-primary);
+  }
+  &--secondary {
+    color: $color-white;
+    background: $color-secondary;
+    @include border-thin($color: $color-secondary);
+  }
+  &--info {
+    color: $color-white;
+    background: $color-info;
+    @include border-thin($color: $color-info);
+  }
+  &--success {
+    color: $color-white;
+    background: $color-success;
+    @include border-thin($color: $color-success);
+  }
+  &--warning {
+    color: $color-white;
+    background: $color-warning;
+    @include border-thin($color: $color-warning);
+  }
+  &--error {
+    color: $color-white;
+    background: $color-error;
+    @include border-thin($color: $color-error);
+  }
+
+  // circle
+  &--circle {
+    border-radius: calc($input-height-md / 2);
+  }
+
+  // size
+  &--large {
+    height: $input-height-lg;
+    line-height: $input-height-lg;
+    font-size: $font-size-lg;
+
+    &.lj-button--circle {
+      border-radius: calc($input-height-lg / 2);
+    }
+  }
+  &--normal {
+    height: $input-height-md;
+    line-height: $input-height-md;
+    font-size: $font-size-base;
+  }
+  &--small {
+    height: $input-height-sm;
+    line-height: $input-height-sm;
+    font-size: $font-size-sm;
+
+    &.lj-button--circle {
+      border-radius: calc($input-height-sm / 2);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+.lj-link {
+  color: $color-link;
+
+  &:active {
+    color: $color-link-active;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &--disabled {
+    color: $color-link-disabled;
+
+    &:hover,
+    &:active {
+      color: $color-link-disabled;
+    }
+  }
+}
