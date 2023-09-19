@@ -29,16 +29,12 @@
     "types"
   ],
   "scripts": {
-    "build": "yarn run build:lib && npm run build:style",
-    "build:lib": "tsc",
-    "build:style": "gulp buildStyle",
+    "build": "tsc",
     "clean": "rimraf .temp dist lib coverage",
-    "dev": "yarn run dev:lib && npm run dev:style",
-    "dev:lib": "tsc --watch --incremental",
-    "dev:style": "gulp watchStyle",
+    "dev": "tsc --watch --incremental",
     "lint": "eslint ./src --fix",
-    "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
-    "lint:style-fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
+    "lint:style": "stylelint \"style/**/*.scss\" --syntax scss",
+    "lint:style-fix": "stylelint \"style/**/*.scss\" --syntax scss --fix"
   },
   "prettier": "@kecoyo/prettier-config",
   "dependencies": {
