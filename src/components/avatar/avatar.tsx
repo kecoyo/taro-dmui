@@ -79,7 +79,7 @@ const Avatar: React.FC<AvatarProps> = (p) => {
       })}
       onClick={props.onClick}
     >
-      <Image className={`${classPrefix}__img`} src={src} onError={onError} />
+      <Image className={`${classPrefix}__img`} src={src} onError={onError} mode="aspectFill" />
     </View>,
   );
 };

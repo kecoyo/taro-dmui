@@ -8,6 +8,8 @@ export { default as Icon } from './components/icon';
 export type { IconProps } from './components/icon';
 export { default as IconInput } from './components/icon-input';
 export type { IconInputProps } from './components/icon-input';
+export { default as Image } from './components/image';
+export type { ImageProps } from './components/image';
 export { default as Input } from './components/input';
 export type { InputProps } from './components/input';
 export { default as Link } from './components/link';
