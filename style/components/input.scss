@@ -1,0 +1,80 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-input';
+
+#{$classPrefix} {
+  padding: 0;
+  margin: 0;
+
+  &::after {
+    border: 0;
+  }
+
+  .at-input__container {
+    height: 100%;
+
+    input {
+      padding: 0 $spacing-h-md;
+    }
+  }
+
+  &--border {
+    border: $input-border;
+    border-radius: $border-radius-md;
+  }
+
+  // 文字对齐方式
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+
+  // 圆角
+  &--circle {
+    border-radius: $input-height-md / 2;
+  }
+
+  // 组件大小
+  &--large {
+    height: $input-height-lg;
+
+    input {
+      font-size: $font-size-lg;
+    }
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-lg / 2;
+    }
+  }
+  &--normal {
+    height: $input-height-md;
+
+    input {
+      font-size: $font-size-md;
+    }
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-md / 2;
+    }
+  }
+  &--small {
+    height: $input-height-sm;
+
+    input {
+      font-size: $font-size-sm;
+    }
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-sm / 2;
+    }
+  }
+}

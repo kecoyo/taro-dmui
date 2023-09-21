@@ -1,0 +1,75 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-base-select';
+
+#{$classPrefix} {
+  height: $input-height-md;
+  background: #ffffff;
+  @include flex-row(space-between, center);
+  padding: 0 $spacing-h-sm;
+
+  &__value {
+    flex: 1;
+    @include text();
+    @include line(1);
+
+    &.placeholder {
+      color: $color-text-placeholder;
+    }
+  }
+
+  &__icon {
+    background-color: transparent;
+    color: $color-text-desc;
+    font-size: $icon-size-md !important;
+  }
+
+  // 显示边框
+  &--border {
+    border: $border-base;
+    border-radius: $border-radius-sm;
+  }
+
+  // 文字对齐方式
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+
+  // 圆角
+  &--circle {
+    border-radius: $input-height-md / 2;
+  }
+
+  // size
+  &--large {
+    height: $input-height-lg;
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-lg / 2;
+    }
+  }
+  &--normal {
+    height: $input-height-md;
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-md / 2;
+    }
+  }
+  &--small {
+    height: $input-height-sm;
+
+    // 圆角
+    &#{$classPrefix}--circle {
+      border-radius: $input-height-sm / 2;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-icon-input';
+
+#{$classPrefix} {
+  position: relative;
+
+  &--has-left-icon {
+    .lj-input {
+      .at-input__container {
+        padding-left: $lj-icon-input-padding;
+
+        input {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  &--has-right-icon {
+    .lj-input {
+      .at-input__container {
+        padding-right: $lj-icon-input-padding;
+      }
+    }
+  }
+
+  &__left-icon {
+    position: absolute;
+    top: 50%;
+    left: $spacing-h-xs + 2px;
+    transform: translateY(-50%);
+    z-index: $lj-icon-input-z-index;
+  }
+
+  &__right-icon {
+    position: absolute;
+    top: 50%;
+    right: $spacing-h-xs + 2px;
+    transform: translateY(-50%);
+    z-index: $lj-icon-input-z-index;
+  }
+}

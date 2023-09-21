@@ -27,6 +27,7 @@ const classPrefix = 'lj-button';
 const Button: React.FC<ButtonProps> = (p) => {
   const props = mergeProps(defaultButtonProps, p);
   const otherProps = _.omit(props, ['className', 'style', 'size']);
+  console.log("🚀 ~ file: button.tsx:30 ~ otherProps:", otherProps)
 
   return withNativeProps(
     props,

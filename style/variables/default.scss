@@ -1,21 +1,75 @@
+@import 'taro-ui/dist/style/variables/default.scss';
+
 /**
  * Default variables
  */
 
 /* Color */
-$color-primary: $color-brand !default;
-$color-secondary: #faad14 !default;
+$color-primary: $color-brand !default; // 用于表示品牌主色
+$color-secondary: #faad14 !default; // 用于表示辅助色
 
-// 表单项高度
-$input-height-lg: 90px !default;
-$input-height-md: 75px !default;
-$input-height-sm: 56px !default;
+/* Text Color */
+$color-text-desc: #3f536e !default; // 文章段落
+
+/* 边框颜色 */
+$color-border-dark: darken($color-border-base, 10%) !default; // 加深
+
+/* 字体 */
+$font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue', helvetica, arial, 'PingFang SC', 'miui', 'Microsoft Yahei', sans-serif !default;
+
+/* Font */
+$font-size-md: $font-size-base !default; // 常用字号
+
+// 边框
+$border-width: '1PX' !default; // 边框宽度
+$border-type: solid !default; // 边框样式
+$border-base: #{$border-width} $border-type $color-border-base !default; // 默认边框
+$border-dark: #{$border-width} $border-type $color-border-dark !default; // 深色边框
+$border-split: #{$border-width} $border-type $color-border-split !default; // 分割线边框
+
+// /* 水平间距 */
+$spacing-h-xs: 2px * $hd !default;
+
+// /* 垂直间距 */
+
+// 头像大小
+$avatar-size-lg: 90px * $hd !default;
+$avatar-size-md: 65px * $hd !default;
+$avatar-size-sm: 48px * $hd !default;
+
+// 阴影
+$box-shadow-base: 0px 0px 8px 0px rgba(0, 0, 0, 0.15) !default; // 默认
+$box-shadow-card: 0px 0px 8px 0px rgba(0, 0, 0, 0.15) !default; // card
 
 /**
  * 组件变量
  */
 
-/* Button */
-// $lj-button-height-lg: $input-height-lg !default;
-// $lj-button-height-md: $input-height-md !default;
-// $lj-button-height-sm: $input-height-sm !default;
+/* radio */
+$radio-color: $color-primary;
+$radio-size: $icon-size-sm;
+
+// 分割
+$split-width-lg: 20px;
+$split-width-md: 14px;
+$split-width-sm: 8px;
+$split-color: $color-border-split;
+
+// 底部高度
+$footer-height: 90px;
+
+/* Input */
+$input-height-lg: 45px * $hd !default;
+$input-height-md: 37px * $hd !default;
+$input-height-sm: 29px * $hd !default;
+$input-border: $border-base !default;
+
+/* IconInput */
+$lj-icon-input-padding: 36px * $hd !default;
+$lj-icon-input-z-index: 701 !default;
+
+/* Textarea */
+$lj-textarea-border: $border-base !default;
+$lj-textarea-text-color: $color-text-base !default;
+$lj-textarea-font-size: $font-size-base !default;
+$lj-textarea-line-height: $line-height-zh !default;

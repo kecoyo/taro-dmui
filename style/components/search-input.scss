@@ -1,0 +1,40 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$lj-search-input-split-line: $border-split !default;
+$lj-search-input-split-line-height: 16px * $hd !default;
+
+$classPrefix: '.lj-search-input';
+
+#{$classPrefix} {
+  .lj-icon-input__right-icon {
+    @include flex-row(center, center);
+    border-left: $lj-search-input-split-line;
+    height: $lj-search-input-split-line-height;
+    padding-left: $spacing-h-xs;
+  }
+
+  &--small {
+    .lj-icon-input__right-icon {
+      .lj-icon {
+        font-size: $icon-size-md * 0.85;
+      }
+    }
+  }
+
+  &--normal {
+    .lj-icon-input__right-icon {
+      .lj-icon {
+        font-size: $icon-size-md;
+      }
+    }
+  }
+
+  &--large {
+    .lj-icon-input__right-icon {
+      .lj-icon {
+        font-size: $icon-size-md * 1.15;
+      }
+    }
+  }
+}
