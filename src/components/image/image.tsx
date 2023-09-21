@@ -15,10 +15,13 @@ export interface ImageProps extends Omit<TaroImageProps, 'style'>, AtComponent {
   /**
    * 默认头像图片地址
    */
-  defaultAvatarUrl?: string;
+  defaultImageUrl?: string;
 }
 
-const defaultImageProps = {};
+export const defaultImageProps = {
+  baseURL: '',
+  defaultImageUrl: '',
+};
 
 const classPrefix = `lj-image`;
 
@@ -48,7 +51,7 @@ const Image: React.FC<ImageProps> = (p) => {
   };
 
   const onError = useMemoizedFn(() => {
-    if (props.defaultAvatarUrl) setSrc(props.defaultAvatarUrl);
+    if (props.defaultImageUrl) setSrc(props.defaultImageUrl);
   });
 
   return withNativeProps(

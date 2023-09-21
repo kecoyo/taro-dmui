@@ -1,0 +1,8 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-date-select';
+
+#{$classPrefix} {
+  width: 100%;
+}
