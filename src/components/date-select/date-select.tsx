@@ -9,7 +9,7 @@ import BaseSelect, { BaseSelectProps } from '../base-select';
 
 export interface DateSelectProps extends Omit<BaseSelectProps, 'value' | 'onSelect'> {
   /**
-   * 显示文本
+   * 显示的日期，格式为"YYYY-MM-DD"
    */
   value?: string;
   /**

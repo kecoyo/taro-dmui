@@ -22,6 +22,7 @@ export interface RegionSelectProps extends Omit<BaseSelectProps, 'value' | 'onSe
    * 分隔符
    * @default ' / '
    */
+  separator?: string;
 }
 
 export const defaultRegionSelectProps = {

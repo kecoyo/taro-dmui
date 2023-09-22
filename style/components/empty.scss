@@ -1,0 +1,19 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-empty';
+
+#{$classPrefix} {
+  @include flex-col(center, center);
+  padding: $spacing-v-md $spacing-h-md;
+
+  &__image {
+    width: $lj-empty-image-width;
+    height: $lj-empty-image-height;
+  }
+
+  &__title {
+    margin-top: $spacing-v-xs;
+    @include text($lj-empty-title-color, $lj-empty-title-font-size, $lj-empty-title-line-height);
+  }
+}

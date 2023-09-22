@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
 import { withNativeProps } from '../../common/native-props';
+import { getOptionLabel, getOptionValue } from '../../common/utils';
 import mergeProps from '../../common/with-default-props';
 import BaseSelect, { BaseSelectProps } from '../base-select';
 
@@ -12,7 +13,7 @@ export interface SelectProps extends Omit<BaseSelectProps, 'value' | 'onSelect'>
    * 选项数组
    * @default []
    */
-  options?: Record<string, any>[];
+  options?: number[] | string[] | Record<string, any>[];
   /**
    * 值字段名
    */
@@ -24,14 +25,11 @@ export interface SelectProps extends Omit<BaseSelectProps, 'value' | 'onSelect'>
   /**
    * 选中的值
    */
-  value?: any;
+  value?: number | string | Record<string, any>;
   /**
    * 值发生改变触发
-   *  @param value 修改的值
-   *  @param label 修改的值的显示名称
-   *  @param option 修改的值的项
    */
-  onChange?: (value: any, label: string, option: Record<string, any>) => void;
+  onChange?: (value: number | string | Record<string, any>) => void;
 }
 
 export const defaultSelectProps = {
@@ -40,35 +38,30 @@ export const defaultSelectProps = {
 
 const classPrefix = 'lj-select';
 
-const getOptionValue = (option?: Record<string, any>, key?: string) => {
-  if (option) {
-    return key ? option[key] : option.value || option.id;
-  }
-};
-const getOptionLabel = (option?: Record<string, any>, key?: string) => {
-  if (option) {
-    return key ? option[key] : option.label || option.name;
-  }
-};
-
 const Select: React.FC<SelectProps> = (p) => {
   const props = mergeProps(defaultSelectProps, p);
   const baseSelectProps = _.omit(props, ['value', 'onSelect']) as BaseSelectProps;
-  const range = props.options.map((opt) => getOptionLabel(opt, props.labelField));
-  const selected = props.options.find((opt) => getOptionValue(opt, props.valueField) === props.value);
 
   const onChange = useMemoizedFn((e) => {
-    let index = e.detail.value;
-    let option = props.options[index];
-    if (props.onChange && option) {
-      props.onChange(getOptionValue(option, props.valueField), getOptionLabel(option, props.labelField), option);
+    const { value: index } = e.detail;
+    if (props.onChange) {
+      const value = props.options[index];
+      props.onChange(value);
     }
+  });
+
+  const valueToIndex = useMemoizedFn((value?: number | string | Record<string, any>) => {
+    return value != undefined ? props.options.findIndex((d) => getOptionValue(d, props.valueField) == getOptionValue(value, props.valueField)) : undefined;
+  });
+
+  const valueToLabel = useMemoizedFn((value?: number | string | Record<string, any>) => {
+    return value != undefined ? getOptionLabel(value, props.labelField) : '';
   });
 
   return withNativeProps(
     props,
-    <Picker className={classNames(classPrefix, {})} mode="selector" range={range} onChange={onChange}>
-      <BaseSelect className={classPrefix} value={selected ? getOptionLabel(selected, props.labelField) : ''} {...baseSelectProps} />
+    <Picker className={classNames(classPrefix, {})} mode="selector" range={props.options} rangeKey={props.labelField} value={valueToIndex(props.value)} onChange={onChange}>
+      <BaseSelect className={classPrefix} value={valueToLabel(props.value)} {...baseSelectProps} />
     </Picker>,
   );
 };
