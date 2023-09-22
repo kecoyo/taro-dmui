@@ -1,0 +1,24 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+$classPrefix: '.lj-demo-block';
+
+#{$classPrefix} {
+  margin-bottom: 12px;
+
+  &:last-of-type {
+    padding-bottom: 32px;
+  }
+
+  &__title {
+    @include text();
+    padding: $spacing-v-md $spacing-h-md $spacing-v-sm;
+  }
+
+  &__body {
+    border-right: none;
+    border-left: none;
+    padding: $spacing-v-md $spacing-h-md;
+    background-color: $color-bg;
+  }
+}

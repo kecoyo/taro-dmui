@@ -11,9 +11,6 @@ $color-secondary: #faad14 !default; // 用于表示辅助色
 /* Text Color */
 $color-text-desc: #3f536e !default; // 文章段落
 
-/* 边框颜色 */
-$color-border-dark: darken($color-border-base, 10%) !default; // 加深
-
 /* 字体 */
 $font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue', helvetica, arial, 'PingFang SC', 'miui', 'Microsoft Yahei', sans-serif !default;
 
@@ -24,7 +21,6 @@ $font-size-md: $font-size-base !default; // 常用字号
 $border-width: '1PX' !default; // 边框宽度
 $border-type: solid !default; // 边框样式
 $border-base: #{$border-width} $border-type $color-border-base !default; // 默认边框
-$border-dark: #{$border-width} $border-type $color-border-dark !default; // 深色边框
 $border-split: #{$border-width} $border-type $color-border-split !default; // 分割线边框
 
 // /* 水平间距 */
@@ -88,3 +84,10 @@ $lj-space-row-gap-lg: $spacing-v-lg !default;
 $lj-space-col-gap-sm: $spacing-h-sm !default;
 $lj-space-col-gap-md: $spacing-h-md !default;
 $lj-space-col-gap-lg: $spacing-h-lg !default;
+
+/* Card */
+$lj-card-background-color: $color-bg !default;
+$lj-card-border-radius: $border-radius-md !default;
+$lj-card-box-shadow: $box-shadow-card !default;
+$lj-card-title-font-size: $font-size-base !default;
+$lj-card-title-line-height: $line-height-zh !default;

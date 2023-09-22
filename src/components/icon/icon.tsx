@@ -55,6 +55,7 @@ const Icon: React.FC<IconProps> = (p) => {
       size={0}
       color={props.color}
       onClick={props.onClick}
+      customStyle={props.customStyle || props.style}
     />,
   );
 };
