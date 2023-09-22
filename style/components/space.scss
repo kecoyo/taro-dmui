@@ -1,4 +1,5 @@
-@import '@/styles/libs.scss';
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
 
 $classPrefix: '.lj-space';
 
@@ -56,109 +57,7 @@ $classPrefix: '.lj-space';
     flex-wrap: wrap;
   }
 
-  // &--row#{&}--larger {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-right: $spacing-h-xl;
-  //   }
-  // }
-  // &--row#{&}--large {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-right: $spacing-h-lg;
-  //   }
-  // }
-  // &--row#{&}--normal {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-right: $spacing-h-md;
-  //   }
-  // }
-  // &--row#{&}--small {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-right: $spacing-h-sm;
-  //   }
-  // }
-  // &--row#{&}--smaller {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-right: $spacing-h-xs;
-  //   }
-  // }
-
-  // &--column {
-  //   @include flex-col();
-
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     &:last-child {
-  //       margin-bottom: 0 !important;
-  //     }
-  //   }
-  // }
-
-  // &--column#{&}--larger {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-bottom: $spacing-v-xl;
-  //   }
-  // }
-  // &--column#{&}--large {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-bottom: $spacing-v-lg;
-  //   }
-  // }
-  // &--column#{&}--normal {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-bottom: $spacing-v-md;
-  //   }
-  // }
-  // &--column#{&}--small {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-bottom: $spacing-v-sm;
-  //   }
-  // }
-  // &--column#{&}--smaller {
-  //   & > radio,
-  //   & > radio-group,
-  //   & > picker,
-  //   & > view,
-  //   & > text {
-  //     margin-bottom: $spacing-v-xs;
-  //   }
-  // }
+  &--flex {
+    display: flex;
+  }
 }

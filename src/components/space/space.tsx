@@ -33,6 +33,11 @@ export interface SpaceProps extends AtComponent {
    */
   wrap?: boolean;
   /**
+   * 使用flex布局，默认是 inline-flex
+   * @default false
+   */
+  flex?: boolean;
+  /**
    * 子组件 className
    */
   itemClassName?: string;
@@ -81,6 +86,7 @@ const Space: React.FC<SpaceProps> = (p) => {
         [`${classPrefix}--gap-col-${props.size}`]: props.size,
         [`${classPrefix}--align-${align}`]: align,
         [`${classPrefix}--wrap`]: props.wrap,
+        [`${classPrefix}--flex`]: props.flex,
       })} //
     >
       <SpaceContextProvider value={spaceContext}>{nodes}</SpaceContextProvider>

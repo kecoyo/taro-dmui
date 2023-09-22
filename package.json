@@ -24,9 +24,9 @@
   "source": "src/index.ts",
   "types": "lib/index.d.ts",
   "files": [
-    "lib",
     "dist",
-    "types"
+    "lib",
+    "style"
   ],
   "scripts": {
     "build": "tsc",

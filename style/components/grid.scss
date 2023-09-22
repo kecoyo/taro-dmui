@@ -1,0 +1,81 @@
+@import '../variables/default.scss';
+@import '../mixins/index.scss';
+
+.lj-row {
+  display: flex;
+  flex-direction: row;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--justify {
+    &-flex-start {
+      justify-content: flex-start;
+    }
+    &-flex-end {
+      justify-content: flex-end;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-space-around {
+      justify-content: space-around;
+    }
+    &-space-between {
+      justify-content: space-between;
+    }
+    &-space-evenly {
+      justify-content: space-evenly;
+    }
+  }
+
+  &--align {
+    &-flex-start {
+      align-items: flex-start;
+    }
+    &-flex-end {
+      align-items: flex-end;
+    }
+    &-center {
+      align-items: center;
+    }
+    &-start {
+      align-items: start;
+    }
+    &-end {
+      align-items: end;
+    }
+    &-self-start {
+      align-items: self-start;
+    }
+    &-self-end {
+      align-items: self-end;
+    }
+  }
+}
+
+.lj-col {
+  box-sizing: border-box;
+
+  &-4 {
+    display: block;
+    flex: 0 0 100% / 24 * 4;
+    max-width: 100% / 24 * 4;
+  }
+  &-8 {
+    display: block;
+    flex: 0 0 100% / 24 * 8;
+    max-width: 100% / 24 * 8;
+  }
+  &-16 {
+    display: block;
+    flex: 0 0 100% / 24 * 16;
+    max-width: 100% / 24 * 16;
+  }
+  &-24 {
+    display: block;
+    flex: 0 0 100% / 24 * 24;
+    max-width: 100% / 24 * 24;
+  }
+}
