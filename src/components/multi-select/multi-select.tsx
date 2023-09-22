@@ -57,7 +57,7 @@ const MultiSelect: React.FC<MultiSelectProps> = (p) => {
   const onChange = useMemoizedFn((e) => {
     const { value: indexs } = e.detail;
     if (props.onChange) {
-      const values = indexs.map((idx, i) => props.options[i][idx]);
+      const values = indexs.map((idx: number, i: number) => props.options[i][idx]);
       props.onChange(values);
     }
   });
@@ -72,7 +72,7 @@ const MultiSelect: React.FC<MultiSelectProps> = (p) => {
 
   // 值转索引
   const valueToIndexs = useMemoizedFn((value: number[] | string[] | Record<string, any>[]) => {
-    return value.map((val, i) => (props.options[i] as any).findIndex((d) => getOptionValue(d, props.valueField) == getOptionValue(val, props.valueField)));
+    return value.map((val, i) => (props.options[i] as any).findIndex((d: any) => getOptionValue(d, props.valueField) == getOptionValue(val, props.valueField)));
   });
 
   // 值转显示名称

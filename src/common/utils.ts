@@ -38,7 +38,7 @@ function delayGetScrollOffset({ delayTime = 500 }): Promise<any[]> {
   });
 }
 
-function delayGetClientRect({ selectorStr, delayTime = 500 }): Promise<any[]> {
+function delayGetClientRect({ selectorStr, delayTime = 500 }: { selectorStr: string; delayTime: number }): Promise<any[]> {
   const selector: SelectorQuery = Taro.createSelectorQuery();
 
   return new Promise((resolve) => {
@@ -217,7 +217,7 @@ function pxTransform(size: number): string {
   return `${size / deviceRatio[designWidth]}rpx`;
 }
 
-function objectToString(style: object | string): string {
+function objectToString(style: string | any): string {
   if (style && typeof style === 'object') {
     let styleStr = '';
     Object.keys(style).forEach((key) => {
@@ -272,4 +272,30 @@ function getOptionLabel(option?: number | string | Record<string, any>, key?: st
   }
 }
 
-export { delay, delayGetClientRect, delayGetScrollOffset, delayQuerySelector, getEventDetail, getOptionLabel, getOptionValue, handleTouchScroll, initTestEnv, isTest, mergeStyle, pxTransform, uuid };
+/**
+ * 转数组
+ * @param candidate
+ * @returns
+ */
+function toArray<T>(candidate?: T | T[] | false): T[] {
+  if (candidate === undefined || candidate === false) return [];
+
+  return Array.isArray(candidate) ? candidate : [candidate];
+}
+
+export {
+  delay,
+  delayGetClientRect,
+  delayGetScrollOffset,
+  delayQuerySelector,
+  getEventDetail,
+  getOptionLabel,
+  getOptionValue,
+  handleTouchScroll,
+  initTestEnv,
+  isTest,
+  mergeStyle,
+  pxTransform,
+  toArray,
+  uuid,
+};

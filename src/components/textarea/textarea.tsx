@@ -34,7 +34,7 @@ const classPrefix = 'lj-textarea';
 
 const Textarea: React.FC<TextareaProps> = (p) => {
   const props = mergeProps(defaultProps, p);
-  const otherProps = _.omit(props, ['className', 'style', 'border', 'onChange']);
+  const otherProps = _.omit(props, ['className', 'style', 'border', 'value', 'onChange']);
 
   const onChange = useMemoizedFn((val: string, event: CommonEvent) => {
     if (props.onChange && val !== props.value) {
@@ -48,6 +48,7 @@ const Textarea: React.FC<TextareaProps> = (p) => {
       className={classNames(classPrefix, {
         [`${classPrefix}--border`]: props.border,
       })}
+      value={props.value || ''}
       onChange={onChange}
       {...otherProps}
     />,

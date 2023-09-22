@@ -28,3 +28,5 @@ export { default as Select } from './components/select';
 export type { SelectProps } from './components/select';
 export { default as Textarea } from './components/textarea';
 export type { TextareaProps } from './components/textarea';
+export { default as Space } from './components/space';
+export type { SpaceProps } from './components/space';
